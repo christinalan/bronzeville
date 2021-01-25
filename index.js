@@ -3,6 +3,9 @@ let app = express();
 let bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
+const { Parser } = require("json2csv");
+let json2csvParser = new Parser();
+
 let DataStore = require("nedb");
 //storing map libs data
 let db = new DataStore("maplibs.db");
@@ -18,7 +21,7 @@ app.use("/", express.static("public"));
 
 //this adds a route to the server that listens for POST requests from the client
 app.post("/maplibs", (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
 
   //insert maplibs into the database
   db.insert(req.body);
@@ -31,9 +34,15 @@ app.get("/getmaplibs", (req, res) => {
     if (err) {
       res.json({ task: "task failed" });
     } else {
-      console.log(docs);
+      // console.log(docs);
       let obj = { data: docs };
-      res.json(obj);
+      // res.json(obj);
+
+      let csv = json2csvParser.parse(docs);
+      console.log(csv);
+
+      let csvObj = { data: csv };
+      res.json(csvObj);
     }
   });
 });
