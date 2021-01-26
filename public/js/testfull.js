@@ -48,6 +48,26 @@ unmuteButton.addEventListener("click", () => {
     muteImage.src = "Images/muted.png";
   }
 });
+
+unmuteButton.addEventListener("mouseenter", () => {
+  console.log("mouse hover");
+
+  if (isMuted) {
+    muteImage.src = "Images/unmuted_black.png";
+  } else {
+    muteImage.src = "Images/muted_black.png";
+  }
+});
+
+unmuteButton.addEventListener("mouseleave", () => {
+  console.log("mouse left");
+
+  if (isMuted) {
+    muteImage.src = "Images/unmuted.png";
+  } else {
+    muteImage.src = "Images/muted.png";
+  }
+});
 //adapted from https://www.openprocessing.org/sketch/943740
 
 let img;
