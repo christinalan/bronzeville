@@ -1,17 +1,20 @@
 canvas {
+  /*
   background: #3d7eaa; /* fallback for old browsers */
+  /*
   background: -webkit-linear-gradient(
     to right,
     #ffe47a,
     #3d7eaa
   ); /* Chrome 10-25, Safari 5.1-6 */
+  /*
   background: linear-gradient(
     180deg,
     #ffe47a,
     #3d7eaa
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-  z-index: -1;
+  z-index: -2;
   position: absolute;
   top: 0;
   left: 0;
@@ -20,19 +23,21 @@ canvas {
 }
 
 * {
+  /* background-color: black; */
+  /* margin: -1px; */
   z-index: 1;
 }
 
 .video-container {
-  margin-top: 8%;
+  margin-top: 3%;
   display: flex;
   justify-content: center;
 }
 
 #video {
-  width: 640px;
+  width: 840px;
   /* max-width: 1280px; */
-  max-height: 360px;
+  max-height: 480px;
   /* max-height: 720px; */
 }
 
@@ -40,7 +45,7 @@ canvas {
   display: flex;
   flex-grow: 1;
   justify-content: center;
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 .btn-grad {
@@ -71,7 +76,7 @@ canvas {
 }
 
 #home-button {
-  margin-top: 2%;
+  /* margin-top: 2%; */
   font-family: "Cormorant", serif;
   /* text-transform: uppercase; */
   /* border: 1px solid white; */

@@ -40,24 +40,20 @@ function preload() {
 }
 
 function setup() {
+  // image(img, 0, 0);
   pixelDensity(1);
   cnv = createCanvas(windowWidth, windowHeight, WEBGL);
   cnv.parent("canvas");
   //   gl = this.canvas.getContext("webgl");
   //   gl.disable(gl.DEPTH_TEST);
-
   img.resize(windowWidth, windowHeight);
-
-  //   shader(sh); //shaders are applied
 }
 
 function draw() {
   shader(sh);
-
   sh.setUniform("iResolution", [width, height]); //pass some values to the shader
   sh.setUniform("iMouse", [mouseX, mouseY]);
   sh.setUniform("iImg", img);
-
   rect(0, 0, width, height);
 }
 

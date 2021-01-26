@@ -30,19 +30,21 @@ float noise(in vec2 _st){
 	return mix(a,b,u.x)+(c-a)*u.y*(1.-u.x)+(d-b)*u.x*u.y;
 }
 
-#define NUM_OCTAVES 2
+#define NUM_OCTAVES 3
 
 float fbm(in vec2 _st){
 	float v=.1;
 	float a=.5;
 	vec2 shift=vec2(100.);
 	// Rotate to reduce axial bias
-	mat2 rot=mat2(u_mouse.x*.0005*cos(.5),u_mouse.y*.001*sin(.5)+5.,
-	-sin(.5)+1.,-u_mouse.y*.001*cos(.5)+5.);
+	// mat2 rot=mat2(u_mouse.x*.0005*cos(.5),u_mouse.y*.001*sin(.5)+5.,
+	// -sin(.5)+1.,-u_mouse.y*.001*cos(.5)+5.);
+	mat2 rot=mat2(cos(.5)+1.,-sin(.5)-5.,
+	sin(.5),cos(.5)+5.);
 	for(int i=0;i<NUM_OCTAVES;++i){
 		v+=a*noise(_st);
-		_st=rot*_st*.7+shift;
-		a*=.5;
+		_st=rot*_st*.1+shift;
+		a*=.6;
 	}
 	return v;
 }
@@ -56,22 +58,22 @@ void main(){
 	q.y=fbm(st+vec2(1.));
 	
 	vec2 r=vec2(0.);
-	r.x=fbm(st+3.*q+vec2(1.7,11.2)+.170*u_time);
+	r.x=fbm(st+3.*q+vec2(1.7,11.2)+.370*u_time*u_mouse.y*.005);
 	r.y=fbm(st+5.*q+vec2(1.3,2.8)+.126*u_time);
 	
-	float f=fbm(st+r);
+	float f=fbm(st*u_mouse.x*.001+r*u_mouse.y*-.01);
 	
 	color=mix(vec3(.0157,.8039,.8314),
 	vec3(.2706,0.,.7725),
 	clamp((f*f)*4.,0.,1.));
 	
 	color=mix(color,
-		vec3(1.,1.,1.),
+		vec3(.4784,.4784,.4784),
 		clamp(length(q),0.,1.));
 		
 		color=mix(color,
 			vec3(.1686,.6039,.9608),
 			clamp(length(r.x),0.,1.));
 			
-			gl_FragColor=vec4((f*f*f+.9*f*f+.8*f)*color,1.);
+			gl_FragColor=vec4((f*f*f+.9*f*f+.7*f)*color,1.);
 		}
