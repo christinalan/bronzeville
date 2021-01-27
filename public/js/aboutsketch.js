@@ -19,7 +19,10 @@ function draw() {
   //send  resolution of sketch into shader
   sh.setUniform("u_resolution", [width, height]);
   sh.setUniform("u_time", millis() / 1000.0);
-  sh.setUniform("u_mouse", [mouseX, map(mouseY, 0, height, height, 0)]);
+  sh.setUniform("u_mouse", [
+    mouseX,
+    map(mouseY, 0, height, height / 2, height),
+  ]);
 
   //rect gives geometry on the screen
   rect(0, 0, width, height);

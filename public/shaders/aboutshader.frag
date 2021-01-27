@@ -2,7 +2,7 @@
 // http://patriciogonzalezvivo.com
 
 #ifdef GL_ES
-precision mediump float;
+precision highp float;
 #endif
 
 uniform vec2 u_resolution;
@@ -42,7 +42,7 @@ float fbm(in vec2 _st){
 	for(int i=0;i<NUM_OCTAVES;++i){
 		v+=a*noise(_st);
 		_st=rot*_st*.1+shift;
-		a*=.6;
+		a*=.55;
 	}
 	return v;
 }
@@ -62,16 +62,16 @@ void main(){
 	float f=fbm(st*u_mouse.x*.001+r*u_mouse.y*-.01);
 	
 	color=mix(vec3(1.,.0392,.5216),
-	vec3(1.,.851,0.),
+	vec3(1.,0.,.251),
 	clamp((f*f)*4.,0.,1.));
 	
 	color=mix(color,
-		vec3(.7098,.7137,.3922),
+		vec3(.7255,.5333,0.),
 		clamp(length(q),0.,1.));
 		
 		color=mix(color,
 			vec3(1.,.2941,.5294),
 			clamp(length(r.x),0.,1.));
 			
-			gl_FragColor=vec4((f*f*f+.9*f*f+.7)*color,1.);
+			gl_FragColor=vec4((f*f*f+.9*f*f+.6)*color,1.);
 		}
