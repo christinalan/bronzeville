@@ -12,25 +12,32 @@ let sources = [
   "Assets/Uncle Js_Smells.mp4",
 ];
 
+let randomNumber = Math.floor(Math.random() * sources.length);
+
 window.addEventListener("load", () => {
   // console.log(video.autoplay);
+  console.log(video.videoWidth);
   video.width = windowWidth;
   video.height = windowHeight;
-  let randomNumber = Math.floor(Math.random() * sources.length);
 
   source.setAttribute("src", sources[randomNumber]);
   console.log(randomNumber);
 
   video.appendChild(source);
+  video.load();
 });
 
 let reloadButton = document.getElementById("random-button");
 reloadButton.addEventListener("click", () => {
-  //   for (let i = 0; i < sources.length; i++) {
-  //     source.setAttribute("src", sources[i]);
-  //   }
+  // for (let i = 0; i < sources.length; i++) {
+  //   source.setAttribute("src", sources[i]);
+  // }
+  // window.location.reload();
+  let newRandom = Math.floor(Math.random() * sources.length);
 
-  window.location.reload();
+  source.setAttribute("src", sources[newRandom]);
+  video.appendChild(source);
+  video.load();
 });
 
 let unmuteButton = document.getElementById("unmute");
