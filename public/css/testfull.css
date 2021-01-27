@@ -65,7 +65,7 @@ body {
   z-index: 2;
   display: flex;
   justify-content: center;
-  margin-top: 40%;
+  margin-top: 50%;
 }
 
 #random-button {
@@ -105,3 +105,33 @@ body {
 #mute-image {
   padding: 0px;
 }
+
+@media all and (orientation: portrait) {
+  .nav {
+    margin-top: 15%;
+    margin-left: 1em;
+    display: flex;
+    flex-direction: column;
+  }
+
+.text {
+  display: flex;
+  margin-top: 7em;
+  margin-left: 6em;
+}
+
+.header-image img {
+    position: fixed;
+    margin-top: -10em;
+    width: 60%;
+  }
+
+  .button {
+    margin-top: 15em;
+  }
+
+  #unmute {
+    text-align: center;
+    margin-left: 13em;
+    width: 15%;
+  }

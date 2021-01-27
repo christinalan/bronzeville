@@ -16,7 +16,7 @@ let randomNumber = Math.floor(Math.random() * sources.length);
 
 window.addEventListener("load", () => {
   // console.log(video.autoplay);
-]
+
   video.width = windowWidth;
   video.height = windowHeight;
 
@@ -49,10 +49,10 @@ unmuteButton.addEventListener("click", () => {
   console.log(isMuted);
   if (isMuted) {
     video.muted = false;
-    muteImage.src = "Images/unmuted.png";
+    muteImage.src = "Images/unmuted_black.png";
   } else {
     video.muted = true;
-    muteImage.src = "Images/muted.png";
+    muteImage.src = "Images/muted_black.png";
   }
 });
 
