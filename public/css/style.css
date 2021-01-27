@@ -17,9 +17,7 @@ body {
 }
 
 .nav {
-  /* display: flex;
-  justify-content: space-between; */
-  margin-top: 25px;
+  margin-top: 30px;
 }
 
 .nav a {
@@ -29,18 +27,21 @@ body {
 }
 
 .header-image {
-  margin-top: -8%;
+  margin-top: -5%;
   display: flex;
   justify-content: center;
 }
 
 .header-image img {
+  display: flex;
+  justify-content: center;
+
   width: 30%;
 }
 
 .button {
   text-align: center;
-  margin-top: 20%;
+  margin-top: 15%;
 }
 
 #random-button {
@@ -68,7 +69,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 20%;
+  margin-top: 15%;
   column-gap: 10px;
 }
 
@@ -87,7 +88,52 @@ body {
   padding: 5px 10px;
 }
 
-@media only screen and (min-width: 400px) {
+@media all and (orientation: portrait) {
+  .nav {
+    margin-top: 10%;
+  }
+
+  .nav a {
+    top: 10em;
+    margin-left: 6em;
+    font-size: 25px;
+    color: white;
+  }
+
+  .header-image img {
+    margin-top: 3em;
+    width: 70%;
+    height: 100%;
+  }
+
+  .button {
+    margin-top: 5em;
+  }
+
+  #random-button {
+    font-size: 25px;
+  }
+
+  .footer {
+    flex-direction: column;
+    margin-top: 5em;
+    row-gap: 40px;
+  }
+
+  #email-input {
+    margin-left: 3em;
+    font-size: 18px;
+    width: 60%;
+  }
+
+  #email-submit {
+    margin-top: 1em;
+    margin-left: 7em;
+    font-size: 18px;
+  }
+}
+
+/* @media only screen and (min-width: 400px) {
   .header-image {
     margin-top: -5%;
   }
@@ -95,7 +141,4 @@ body {
   #random-button {
     width: 50%;
   }
-
-  .canvas {
-  }
-}
+} */

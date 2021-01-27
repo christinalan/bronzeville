@@ -54,6 +54,13 @@
   font-size: 20px;
 }
 
+@media all and (orientation: portrait) {
+  .top-image {
+    width: 60%;
+    height: 100%;
+  }
+}
+
 @media only screen and (min-width: 600px) {
   .top-image {
     width: 60%;

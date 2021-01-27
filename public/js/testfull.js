@@ -16,7 +16,7 @@ let randomNumber = Math.floor(Math.random() * sources.length);
 
 window.addEventListener("load", () => {
   // console.log(video.autoplay);
-  console.log(video.videoWidth);
+]
   video.width = windowWidth;
   video.height = windowHeight;
 

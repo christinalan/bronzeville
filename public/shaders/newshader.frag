@@ -44,7 +44,7 @@ float fbm(in vec2 _st){
 	for(int i=0;i<NUM_OCTAVES;++i){
 		v+=a*noise(_st);
 		_st=rot*_st*.1+shift;
-		a*=.6;
+		a*=.5;
 	}
 	return v;
 }
@@ -58,7 +58,7 @@ void main(){
 	q.y=fbm(st+vec2(1.));
 	
 	vec2 r=vec2(0.);
-	r.x=fbm(st+3.*q+vec2(1.7,11.2)+.370*u_time*u_mouse.y*.005);
+	r.x=fbm(st+3.*q+vec2(1.7,11.2)+.370*u_time);
 	r.y=fbm(st+5.*q+vec2(1.3,2.8)+.126*u_time);
 	
 	float f=fbm(st*u_mouse.x*.001+r*u_mouse.y*-.01);

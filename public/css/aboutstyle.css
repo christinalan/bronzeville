@@ -21,7 +21,7 @@ body {
 .nav {
   /* display: flex;
   justify-content: space-between; */
-  margin-top: 25px;
+  margin-top: 30px;
 }
 
 .nav a {
@@ -31,13 +31,15 @@ body {
 }
 
 .header-image {
-  margin-top: 0;
+  margin-top: -5%;
   display: flex;
   justify-content: center;
 }
 
 .header-image img {
-  width: 15%;
+  display: flex;
+  justify-content: center;
+  width: 30%;
 }
 
 h1 {
@@ -71,4 +73,32 @@ a {
 
 a:hover {
   color: rgba(250, 100, 50);
+}
+
+@media all and (orientation: portrait) {
+  .nav {
+    margin-top: 10%;
+  }
+
+  .nav a {
+    top: 10em;
+    margin-left: 6em;
+    font-size: 25px;
+    color: white;
+  }
+
+  .header-image img {
+    margin-top: 3em;
+    width: 70%;
+    height: 100%;
+  }
+
+  .author-block {
+    left: 3em;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
 }

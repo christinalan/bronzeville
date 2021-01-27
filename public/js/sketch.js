@@ -5,11 +5,11 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight, WEBGL);
+  createCanvas(displayWidth, displayHeight, WEBGL);
   noStroke();
 
-  gl = this.canvas.getContext("webgl");
-  gl.disable(gl.DEPTH_TEST); //*/
+  // gl = this.canvas.getContext("webgl");
+  // gl.disable(gl.DEPTH_TEST);
 }
 
 function draw() {
