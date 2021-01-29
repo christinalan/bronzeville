@@ -54,7 +54,7 @@ body {
 #video {
   z-index: -1;
   object-fit: cover;
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   /* width: 100vw;
