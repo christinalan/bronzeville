@@ -11,7 +11,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  /* background-color: black; */
+  z-index: -3;
+  background-color: black;
 }
 
 .nav {
@@ -28,6 +29,7 @@ body {
 }
 
 .text {
+  z-index: 2;
   color: white;
   font-family: "Cormorant", serif;
   font-weight: 600;
@@ -52,9 +54,10 @@ body {
 }
 
 #video {
-  z-index: -1;
-  object-fit: cover;
-  position: absolute;
+  z-index: 0;
+  object-position: 50% 0%;
+  object-fit: contain;
+  position: fixed;
   left: 0;
   top: 0;
   /* width: 100vw;
@@ -88,6 +91,7 @@ body {
 }
 
 #unmute {
+  z-index: 2;
   margin-top: 10px;
   margin-left: 70px;
   height: 45px;
