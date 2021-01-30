@@ -17,7 +17,7 @@ function draw() {
   shader(sh);
 
   //send  resolution of sketch into shader
-  sh.setUniform("u_resolution", [width, height]);
+  sh.setUniform("u_resolution", [2 * width, height]);
   sh.setUniform("u_time", millis() / 1000.0);
   sh.setUniform("u_mouse", [
     map(mouseX, 0, width, width, 0),
