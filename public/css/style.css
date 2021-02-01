@@ -57,6 +57,12 @@ body {
   padding: 10px;
 }
 
+#random-button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
 .color-inputs {
   font-family: "Cormorant", serif;
   border: 1px solid white;
@@ -69,23 +75,31 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 15%;
+  margin-top: 10%;
   column-gap: 10px;
 }
 
-#email-input {
+/* #email-input {
   width: 40%;
   font-family: "Cormorant", serif;
   padding: 5px 10px;
-}
+} */
 
 ::placeholder {
   color: white;
 }
 
 #email-submit {
+  border-radius: 15px;
   font-family: "Cormorant", serif;
-  padding: 5px 10px;
+  font-size: 20px;
+  padding: 15px 20px;
+}
+
+#email-submit:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 @media all and (orientation: portrait) {

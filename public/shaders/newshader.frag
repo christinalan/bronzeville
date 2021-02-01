@@ -30,7 +30,7 @@ float noise(in vec2 _st){
 	return mix(a,b,u.x)+(c-a)*u.y*(1.-u.x)+(d-b)*u.x*u.y;
 }
 
-#define NUM_OCTAVES 5
+#define NUM_OCTAVES 3
 
 float fbm(in vec2 _st){
 	float v=.1;
@@ -67,10 +67,10 @@ void main(){
 	q.y=fbm(st+vec2(1.));
 	
 	vec2 r=vec2(0.);
-	r.x=fbm(st+3.*q+vec2(1.7,11.2)+.370*u_time*u_mouse.x*.001);
-	r.y=fbm(st+5.*q+vec2(1.3,2.8)+.126*u_time*u_mouse.y*-.01);
+	r.x=fbm(st+3.*q+vec2(1.7,11.2)+.470*u_time);
+	r.y=fbm(st+5.*q+vec2(1.3,2.8)+.126*u_time);
 	
-	float f=fbm(st+r);
+	float f=fbm(st*u_mouse.x*.0005+r*u_mouse.y*-.0005);
 	
 	color=mix(vec3(0.,.6,1.),
 	vec3(.9333,.6471,.8039),

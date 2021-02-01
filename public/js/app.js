@@ -8,6 +8,7 @@ window.addEventListener("load", () => {
     let event = document.getElementById("event").value;
     let object = document.getElementById("object").value;
     let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
 
     console.log(
       neighborhood +
@@ -27,6 +28,7 @@ window.addEventListener("load", () => {
 
     let obj = {
       name: name,
+      email: email,
       neighborhood: neighborhood,
       place: place,
       sound: sound,
