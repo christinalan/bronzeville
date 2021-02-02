@@ -4,7 +4,6 @@ let audio = document.getElementById("audio");
 let source = document.createElement("source");
 let text = document.getElementById("description");
 let addtext = document.createElement("p");
-let count = 0;
 let isMuted;
 
 // let sources = [
@@ -61,16 +60,34 @@ window.addEventListener("load", () => {
   // video.height = innerHeight;
 
   source.setAttribute("src", newsources[randomNumber].src);
-  console.log(randomNumber);
+  // console.log(randomNumber);
 
   video.appendChild(source);
   video.load();
 
-  // document.body.style.backgroundColor = "black";
-
   addtext.innerHTML = newsources[randomNumber].text;
   console.log(addtext.innerHTML);
   text.appendChild(addtext);
+
+  let stringSource = JSON.stringify(source.src);
+  console.log(stringSource.includes("wav"));
+
+  if (stringSource.includes("mp4")) {
+    document.body.style.backgroundColor = "black";
+    let canvas = document.getElementById("canvas");
+    let context = canvas.getContext("2d");
+    context.fillStyle = "black";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+  } else if (stringSource.includes("wav")) {
+    var gradient = context.createLinearGradient(0, 0, 0, canvas.height);
+    gradient.addColorStop(0, "#1750AC");
+    gradient.addColorStop(0.8, "#5494DA");
+    context.fillStyle = gradient;
+    context.fillRect(0, 0, canvas.width, canvas.height);
+  }
+
+  // let script = document.getElementById("cloudJS");
+  // let cloudScript = document.querySelector('script[src*="js/cloud.js"]');
 });
 
 let reloadButton = document.getElementById("random-button");
@@ -88,6 +105,20 @@ reloadButton.addEventListener("click", () => {
   addtext.innerHTML = newsources[newRandom].text;
   console.log(addtext.innerHTML);
   text.appendChild(addtext);
+
+  if (stringSource.includes("mp4")) {
+    document.body.style.backgroundColor = "black";
+    let canvas = document.getElementById("canvas");
+    let context = canvas.getContext("2d");
+    context.fillStyle = "black";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+  } else if (stringSource.includes("wav")) {
+    let gradient = context.createLinearGradient(0, 0, 0, canvas.height);
+    gradient.addColorStop(0, "#1750AC");
+    gradient.addColorStop(0.8, "#5494DA");
+    context.fillStyle = gradient;
+    context.fillRect(0, 0, canvas.width, canvas.height);
+  }
 });
 
 let unmuteButton = document.getElementById("unmute");
