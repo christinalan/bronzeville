@@ -19,7 +19,8 @@ function init() {
 
   // Bg gradient
 
-  var canvas = document.createElement("canvas");
+  //   var canvas = document.createElement("canvas");
+  var canvas = document.getElementById("canvas");
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 

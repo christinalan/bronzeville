@@ -1,18 +1,29 @@
-/* * {
-  padding: -0;
-  margin-left: -10px;
+canvas {
+  z-index: -1;
+  position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  z-index: 0;
-} */
+  width: 100vw;
+  height: 100vh;
+}
 
-html,
+html {
+  height: 100%;
+}
+
 body {
   padding: 0;
   margin: 0;
-  z-index: -3;
-  background-color: black;
+  z-index: 0;
+  /* background: rgb(23, 80, 172);
+  background: linear-gradient(
+    rgba(23, 80, 172, 1) 0%,
+    rgba(84, 148, 218, 1) 100%
+  ); */
+  margin: 0px;
+  overflow: hidden;
+  font-weight: bold;
+  font-family: "Cormorant", serif;
 }
 
 .nav {
@@ -56,15 +67,14 @@ body {
 }
 
 #video {
-  z-index: 0;
+  z-index: 1;
   object-position: 50% 0%;
-  object-fit: contain;
+  object-fit: cover;
   position: fixed;
   left: 0;
   top: 0;
-
-  /* width: 100vw;
-  height: 100vh; */
+  width: 100vw;
+  height: 100vh;
 }
 
 .button {

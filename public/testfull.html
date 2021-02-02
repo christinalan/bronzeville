@@ -34,7 +34,48 @@
         </div>
         <!-- <section id="canvas"></section> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
+
     <script src="js/testfull.js"></script>
+    
+    <script type="text/javascript" src="js/threeJS/three.min.js"></script>
+    <script type="text/javascript" src="js/threeJS/Detector.js"></script>
+
+    <script id="vs" type="x-shader/x-vertex">
+
+      varying vec2 vUv;
+
+      void main() {
+
+      	vUv = uv;
+      	gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+
+      }
+    </script>
+
+    <script id="fs" type="x-shader/x-fragment">
+
+      uniform sampler2D map;
+
+      uniform vec3 fogColor;
+      uniform float fogNear;
+      uniform float fogFar;
+
+      varying vec2 vUv;
+
+      void main() {
+
+      	float depth = gl_FragCoord.z / gl_FragCoord.w;
+      	float fogFactor = smoothstep( fogNear, fogFar, depth );
+
+      	gl_FragColor = texture2D( map, vUv );
+      	gl_FragColor.w *= pow( gl_FragCoord.z, 50.0 );
+      	gl_FragColor = mix( gl_FragColor, vec4( fogColor, gl_FragColor.w ), fogFactor );
+
+      }
+    </script>
+
+    <canvas id="canvas"></canvas>
+    <script src="js/cloud.js"></script>
     
   </body>
 </html>

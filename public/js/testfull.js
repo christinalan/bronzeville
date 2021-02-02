@@ -57,14 +57,16 @@ let randomNumber = Math.floor(Math.random() * newsources.length);
 window.addEventListener("load", () => {
   // console.log(video.autoplay);
 
-  video.width = innerWidth;
-  video.height = innerHeight;
+  // video.width = innerWidth;
+  // video.height = innerHeight;
 
   source.setAttribute("src", newsources[randomNumber].src);
   console.log(randomNumber);
 
   video.appendChild(source);
   video.load();
+
+  // document.body.style.backgroundColor = "black";
 
   addtext.innerHTML = newsources[randomNumber].text;
   console.log(addtext.innerHTML);
