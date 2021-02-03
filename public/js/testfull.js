@@ -95,12 +95,26 @@ window.addEventListener("load", () => {
 });
 
 let reloadButton = document.getElementById("random-button");
-reloadButton.addEventListener("click", () => {
-  // for (let i = 0; i < sources.length; i++) {
-  //   source.setAttribute("src", sources[i]);
-  // }
-  // window.location.reload();
+let lastPick = 0;
+let getRandom = function () {
   let newRandom = Math.floor(Math.random() * newsources.length);
+
+  if (newRandom != lastPick) {
+    lastPick = newRandom;
+  } else {
+    getRandom();
+  }
+};
+reloadButton.addEventListener("click", () => {
+  let last = 0;
+
+  let newRandom = Math.floor(Math.random() * newsources.length);
+
+  if (newRandom != lastPick) {
+    lastPick = newRandom;
+  } else {
+    newRandom = Math.floor(Math.random() * newsources.length);
+  }
 
   source.setAttribute("src", newsources[newRandom].src);
   video.appendChild(source);

@@ -157,6 +157,12 @@ body {
     margin-left: 6em;
   }
 
+  .credit {
+    margin-left: 35%;
+    margin-top: 5%;
+    width: 50%;
+  }
+
 .header-image img {
     position: fixed;
     margin-top: -10em;

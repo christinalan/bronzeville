@@ -126,8 +126,8 @@ body {
 
   .nav a {
     top: 10em;
-    margin-left: 6em;
-    font-size: 25px;
+    margin-left: 45%;
+    font-size: 40px;
     color: white;
   }
 
@@ -142,7 +142,8 @@ body {
   }
 
   #random-button {
-    font-size: 25px;
+    font-size: 50px;
+    padding: 20px;
   }
 
   .footer {
@@ -151,15 +152,9 @@ body {
     row-gap: 40px;
   }
 
-  #email-input {
-    margin-left: 3em;
-    font-size: 18px;
-    width: 60%;
-  }
-
   #email-submit {
     margin-top: 1em;
-    margin-left: 7em;
-    font-size: 18px;
+    margin-left: 33%;
+    font-size: 50px;
   }
 }
