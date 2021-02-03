@@ -11,7 +11,12 @@ var start_time = Date.now();
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
 
-init();
+let canvas = document.getElementById("canvas");
+let context = canvas.getContext("2d");
+
+setTimeout(function () {
+  init();
+}, 100);
 
 function init() {
   container = document.createElement("div");
@@ -19,14 +24,13 @@ function init() {
 
   // Bg gradient
 
-  //   var canvas = document.createElement("canvas");
-  var canvas = document.getElementById("canvas");
+  //   let canvas = document.getElementById("canvas");
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  var context = canvas.getContext("2d");
+  //   let context = canvas.getContext("2d");
 
-  var gradient = context.createLinearGradient(0, 0, 0, canvas.height);
+  let gradient = context.createLinearGradient(0, 0, 0, canvas.height);
   gradient.addColorStop(0, "#1750AC");
   gradient.addColorStop(0.8, "#5494DA");
 
@@ -94,7 +98,7 @@ function init() {
   mesh.position.z = -200;
   scene.add(mesh);
 
-  renderer = new THREE.WebGLRenderer({ antialias: false });
+  renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
   // renderer.setClearColor( 0x000000, 0 );
   container.appendChild(renderer.domElement);

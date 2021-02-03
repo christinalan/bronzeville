@@ -127,9 +127,9 @@ body {
 @media all and (orientation: portrait) {
   .nav {
     margin-top: 15%;
-    margin-left: 1em;
     display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
   }
 
   #video {
@@ -139,6 +139,8 @@ body {
 
   .text {
     display: flex;
+    justify-content: center;
+    width: 50%;
     margin-top: 7em;
     margin-left: 6em;
   }
@@ -150,11 +152,11 @@ body {
   }
 
   .button {
-    margin-top: 15em;
+    margin-top: 13em;
   }
 
   #unmute {
     text-align: center;
-    margin-left: 13em;
+    margin-left: 40%;
     width: 15%;
   }
