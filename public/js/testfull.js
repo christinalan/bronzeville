@@ -4,6 +4,8 @@ let audio = document.getElementById("audio");
 let source = document.createElement("source");
 let text = document.getElementById("description");
 let addtext = document.createElement("p");
+let credit = document.getElementById("credit");
+let addcredit = document.createElement("p");
 let isMuted;
 
 // let sources = [
@@ -17,36 +19,43 @@ let isMuted;
 let marcellus = {
   text: "marcellus' place",
   src: "Assets/Sip Savor2_Place.mp4",
+  credit: "Credit: Toya Miller",
 };
 
 let susan = {
   text: "susan's place",
   src: "Assets/Mandrake Park2_Place.mp4",
+  credit: "Credit: Pastor Michael Neal",
 };
 
 let doug = {
   text: "doug's little known history fact",
   src: "Assets/Black Excellence Elder_History.mp4",
+  credit: "Credit: Kathy Chaney",
 };
 
 let jarred = {
   text: "jarred's smells",
   src: "Assets/Uncle Js_Smells.mp4",
+  credit: "Credit: Uncle J's Bar B Que",
 };
 
 let rena = {
   text: "rena's little known history fact",
   src: "Assets/Bud Bilken Parade_History.mp4",
+  credit: "Credit: James Harris",
 };
 
 let franklin = {
   text: "franklin's sounds",
   src: "Assets/Sounds/franklin.wav",
+  credit: "",
 };
 
 let marshall = {
   text: "marshall's sounds",
   src: "Assets/Sounds/marshall.wav",
+  credit: "",
 };
 
 let newsources = [marcellus, susan, doug, jarred, rena, franklin, marshall];
@@ -68,6 +77,9 @@ window.addEventListener("load", () => {
   addtext.innerHTML = newsources[randomNumber].text;
   console.log(addtext.innerHTML);
   text.appendChild(addtext);
+
+  addcredit.innerHTML = newsources[randomNumber].credit;
+  credit.appendChild(addcredit);
 
   let stringSource = JSON.stringify(source.src);
   // console.log(stringSource.includes("wav"));
@@ -97,6 +109,9 @@ reloadButton.addEventListener("click", () => {
   addtext.innerHTML = newsources[newRandom].text;
   console.log(addtext.innerHTML);
   text.appendChild(addtext);
+
+  addcredit.innerHTML = newsources[randomNumber].credit;
+  credit.appendChild(addcredit);
 
   let stringSource = JSON.stringify(source.src);
   // console.log(stringSource.includes("mp4"));
