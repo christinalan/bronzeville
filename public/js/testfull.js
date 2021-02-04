@@ -6,6 +6,8 @@ let text = document.getElementById("description");
 let addtext = document.createElement("p");
 let credit = document.getElementById("credit");
 let addcredit = document.createElement("p");
+let description = document.getElementById("sentence");
+let adddes = document.createElement("p");
 let isMuted;
 
 // let sources = [
@@ -16,49 +18,56 @@ let isMuted;
 //   "Assets/Uncle Js_Smells.mp4",
 // ];
 
-let marcellus = {
-  text: "marcellus' place",
+let glenance = {
+  text: "glenance's place",
   src: "Assets/Sip Savor2_Place.mp4",
+  des: "Sip & Savor",
   credit: "Credit: Toya Miller",
 };
 
-let susan = {
-  text: "susan's place",
+let azurii = {
+  text: "azurii's place",
+  des: "Mandrake Park",
   src: "Assets/Mandrake Park2_Place.mp4",
   credit: "Credit: Pastor Michael Neal",
 };
 
-let doug = {
-  text: "doug's little known history fact",
+let susan = {
+  text: "susan's little known history fact",
+  des: "Black Excellence",
   src: "Assets/Black Excellence Elder_History.mp4",
   credit: "Credit: Kathy Chaney",
 };
 
 let jarred = {
   text: "jarred's smells",
+  des: "Uncle J's Bar B Que",
   src: "Assets/Uncle Js_Smells.mp4",
   credit: "Credit: Uncle J's Bar B Que",
 };
 
-let rena = {
-  text: "rena's little known history fact",
+let ezinwa = {
+  text: "ezinwa's little known history fact",
+  des: "Bud Billiken Parade",
   src: "Assets/Bud Bilken Parade_History.mp4",
   credit: "Credit: James Harris",
 };
 
 let franklin = {
   text: "franklin's sounds",
+  des: "Kids playing",
   src: "Assets/Sounds/franklin.wav",
   credit: "",
 };
 
-let marshall = {
-  text: "marshall's sounds",
+let marcellus = {
+  text: "marcellus' sounds",
+  des: "People conversing over coffee and tea",
   src: "Assets/Sounds/marshall.wav",
   credit: "",
 };
 
-let newsources = [marcellus, susan, doug, jarred, rena, franklin, marshall];
+let newsources = [glenance, azurii, susan, jarred, ezinwa, franklin, marcellus];
 
 let randomNumber = Math.floor(Math.random() * newsources.length);
 
@@ -75,8 +84,11 @@ window.addEventListener("load", () => {
   video.load();
 
   addtext.innerHTML = newsources[randomNumber].text;
-  console.log(addtext.innerHTML);
+  // console.log(addtext.innerHTML);
   text.appendChild(addtext);
+
+  adddes.innerHTML = newsources[randomNumber].des;
+  description.appendChild(adddes);
 
   addcredit.innerHTML = newsources[randomNumber].credit;
   credit.appendChild(addcredit);
@@ -96,18 +108,16 @@ window.addEventListener("load", () => {
 
 let reloadButton = document.getElementById("random-button");
 let lastPick = 0;
-let getRandom = function () {
-  let newRandom = Math.floor(Math.random() * newsources.length);
+// let getRandom = function () {
+//   let newRandom = Math.floor(Math.random() * newsources.length);
 
-  if (newRandom != lastPick) {
-    lastPick = newRandom;
-  } else {
-    getRandom();
-  }
-};
+//   if (newRandom != lastPick) {
+//     lastPick = newRandom;
+//   } else {
+//     getRandom();
+//   }
+// };
 reloadButton.addEventListener("click", () => {
-  let last = 0;
-
   let newRandom = Math.floor(Math.random() * newsources.length);
 
   if (newRandom != lastPick) {
@@ -124,7 +134,10 @@ reloadButton.addEventListener("click", () => {
   console.log(addtext.innerHTML);
   text.appendChild(addtext);
 
-  addcredit.innerHTML = newsources[randomNumber].credit;
+  adddes.innerHTML = newsources[newRandom].des;
+  description.appendChild(adddes);
+
+  addcredit.innerHTML = newsources[newRandom].credit;
   credit.appendChild(addcredit);
 
   let stringSource = JSON.stringify(source.src);

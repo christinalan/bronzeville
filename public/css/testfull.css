@@ -49,26 +49,36 @@ body {
   width: 15%;
 }
 
+.sentence {
+  z-index: 2;
+  color: white;
+  font-family: "Cormorant", serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  width: 15%;
+}
+
+
+.credit-container {
+  z-index: 2;
+  display: flex;
+}
+
 .credit {
   z-index: 2;
+  display: flex;
   color: white;
   font-family: "Cormorant", serif;
   font-weight: 400;
   text-transform: uppercase;
   font-size: 8px;
-  width: 15%;
   margin-left: 90%;
-}
-
-.header-image {
-  /* display: flex;
-  justify-content: center; */
 }
 
 .header-image img {
   z-index: 2;
   width: 25%;
-  margin-left: -20%;
+  /* margin-left: -15%; */
 }
 
 .video-container {
@@ -91,7 +101,7 @@ body {
   z-index: 2;
   display: flex;
   justify-content: center;
-  margin-top: 35%;
+  margin-top: 40%;
 }
 
 #random-button {
@@ -116,14 +126,12 @@ body {
 
 #unmute {
   z-index: 2;
-  margin-top: 10px;
-  /* margin-left: 70px; */
+  margin-left: 1em;
   height: 45px;
+  border-radius: 25px;
   border: 1px solid rgb(255, 255, 255);
   color: white;
   background-color: transparent;
-  /* border-radius: 25px; */
-  /* padding: -5em 8px -5px 8px; */
 }
 
 #unmute:hover {
@@ -143,10 +151,10 @@ body {
 
 @media all and (orientation: portrait) {
   .nav {
-    margin-top: 40%;
+    margin-top: 35%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
     margin-left: 1em;
   }
 
@@ -157,28 +165,40 @@ body {
 
   .text {
     width: 70%;
-    margin-left: 3em;
+    margin-left: -10%;
+    text-align: center;
+  }
+
+  .sentence {
+    width: 80%;
+    margin-left: -10%;
+    text-align: center;
   }
 
   .credit {
-    margin-left: 35%;
+    margin-left: 38%;
     margin-top: 5%;
     width: 50%;
   }
 
 .header-image img {
-    position: fixed;
-    margin-top: -8em;
-    width: 60%;
+    /* position: fixed; */
+    margin-top: -9em;
+    width: 90%;
+    height: 100%;
   }
 
   .button {
-    margin-top: 13em;
+    margin-top: 45%;
+    margin-left: 28%;
+    flex-direction: column-reverse;
+    justify-content: center;
   }
 
 
   #unmute {
     text-align: center;
-    margin-left: 35%;
+    margin-left: 23%;
+    margin-bottom: 5%;
     width: 15%;
   }
