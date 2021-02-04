@@ -16,24 +16,23 @@ body {
   margin: 0;
   z-index: 0;
   background: black;
+  margin: 0px;
+  font-weight: bold;
+  font-family: "Cormorant", serif;
   /* background: rgb(23, 80, 172);
   background: linear-gradient(
     rgba(23, 80, 172, 1) 0%,
     rgba(84, 148, 218, 1) 100%
   ); */
-  margin: 0px;
-  overflow: hidden;
-  font-weight: bold;
-  font-family: "Cormorant", serif;
 }
 
 .nav {
-  /* margin-left: 8em; */
-  display: flex;
+  display:flex;
   flex-direction: row;
   justify-content: space-evenly;
-  flex-wrap: wrap;
-  margin-top: 25px;
+  margin-top: 2%;
+  padding: 0px 50px 0px 50px;
+    /* flex-wrap: wrap; */
 }
 
 .nav a {
@@ -67,10 +66,9 @@ body {
 }
 
 .header-image img {
-  display: flex;
-  justify-content: center;
   z-index: 2;
   width: 25%;
+  margin-left: -20%;
 }
 
 .video-container {
@@ -93,7 +91,7 @@ body {
   z-index: 2;
   display: flex;
   justify-content: center;
-  margin-top: 40%;
+  margin-top: 35%;
 }
 
 #random-button {
@@ -107,6 +105,7 @@ body {
   border-radius: 25px;
   width: 60%;
   padding: 10px;
+  margin-bottom: 10%;
 }
 
 #random-button:hover {
@@ -118,7 +117,7 @@ body {
 #unmute {
   z-index: 2;
   margin-top: 10px;
-  margin-left: 70px;
+  /* margin-left: 70px; */
   height: 45px;
   border: 1px solid rgb(255, 255, 255);
   color: white;
@@ -135,13 +134,20 @@ body {
   padding: 0px;
 }
 
+@media all and (max-width: 700px) {
+  .header-image img {
+    width: 40%;
+    margin-left: -5%;
+  }
+}
 
 @media all and (orientation: portrait) {
   .nav {
-    margin-top: 15%;
+    margin-top: 40%;
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
+    justify-content: center;
+    margin-left: 1em;
   }
 
   #video {
@@ -150,11 +156,8 @@ body {
   }
 
   .text {
-    display: flex;
-    justify-content: center;
-    width: 50%;
-    margin-top: 7em;
-    margin-left: 6em;
+    width: 70%;
+    margin-left: 3em;
   }
 
   .credit {
@@ -165,7 +168,7 @@ body {
 
 .header-image img {
     position: fixed;
-    margin-top: -10em;
+    margin-top: -8em;
     width: 60%;
   }
 
@@ -173,8 +176,9 @@ body {
     margin-top: 13em;
   }
 
+
   #unmute {
     text-align: center;
-    margin-left: 40%;
+    margin-left: 35%;
     width: 15%;
   }
