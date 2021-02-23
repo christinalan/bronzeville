@@ -6,11 +6,109 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <link href="css/cloudstyle.css" rel="stylesheet" />
     <title>Bronzeville</title>
     <meta charset="utf-8" />
   </head>
   <body>
+    <div class="maplibspdf">
+      <div class="header">
+        <img class="top-image" src="Images/flyer_headerT.png" />
+      </div>
+      <div>
+        <p class="fill-in">FILL IN THE BLANKS!</p>
+      </div>
+      <div class="text">
+        <p class="description">
+          I live in
+          <input
+            id="neighborhood"
+            class="inputs"
+            type="text"
+            value="A NEIGHBORHOOD"
+            onfocus='if(this.value=="A NEIGHBORHOOD"){this.value="";}'
+          />. My neighborhood feels like a community when I go to
+          <input
+            id="place"
+            class="inputs"
+            type="text"
+            placeholder="A PLACE"
+            value="A PLACE"
+            onfocus='if(this.value=="A NEIGHBORHOOD"){this.value="";}'
+          />
+          and hear
+          <input
+            id="sound"
+            class="inputs"
+            type="text"
+            value="A SOUND"
+            onfocus='if(this.value=="A SOUND"){this.value="";}'
+          />
+          and smell
+          <input
+            id="smell"
+            class="inputs"
+            type="text"
+            value="A SMELL"
+            onfocus='if(this.value=="A SMELL"){this.value="";}'
+          />. I wish more people knew about the history of
+          <input
+            id="event"
+            class="inputs"
+            type="text"
+            value="AN EVENT"
+            onfocus='if(this.value=="AN EVENT"){this.value="";}'
+          />
+          in this neighborhood. In the future, I hope that every street corner
+          has
+          <input
+            id="object"
+            class="inputs"
+            type="text"
+            value="AN OBJECT"
+            onfocus='if(this.value=="AN OBJECT"){this.value="";}'
+          />.
+        </p>
+      </div>
+
+      <!-- name and email -->
+      <div class="submit-div">
+        <input
+          id="name"
+          class="inputs"
+          type="text"
+          value="FIRST NAME"
+          onfocus='if(this.value=="FIRST NAME"){this.value="";}'
+        />
+        <input
+          id="email"
+          class="inputs"
+          type="text"
+          value="EMAIL ADDRESS"
+          onfocus='if(this.value=="EMAIL ADDRESS"){this.value="";}'
+        />
+        <a href="index.html"
+          ><button id="submit" class="submit-button">
+            <b>SUBMIT ANSWERS</b>
+          </button></a
+        >
+      </div>
+    </div>
+
     <div class="nav">
       <a href="about.html">about</a>
       <div class="header-image">
@@ -215,5 +313,6 @@
         renderer.render(scene, camera);
       }
     </script>
+    <script src="js/app.js"></script>
   </body>
 </html>
