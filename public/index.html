@@ -25,7 +25,7 @@
     <meta charset="utf-8" />
   </head>
   <body>
-    <div class="maplibspdf">
+    <div class="maplibspdf" id="maplibspdf">
       <div class="header">
         <img class="top-image" src="Images/flyer_headerT.png" />
       </div>
@@ -33,7 +33,7 @@
         <p class="fill-in">FILL IN THE BLANKS!</p>
       </div>
       <div class="text">
-        <p class="description">
+        <p class="description" id="description">
           I live in
           <input
             id="neighborhood"
@@ -48,7 +48,7 @@
             type="text"
             placeholder="A PLACE"
             value="A PLACE"
-            onfocus='if(this.value=="A NEIGHBORHOOD"){this.value="";}'
+            onfocus='if(this.value=="A PLACE"){this.value="";}'
           />
           and hear
           <input
@@ -86,7 +86,7 @@
       </div>
 
       <!-- name and email -->
-      <div class="submit-div">
+      <div class="submit-div" id="submit-div">
         <input
           id="name"
           class="inputs"
@@ -109,37 +109,36 @@
       </div>
     </div>
 
-    <div class="nav">
-      <a href="about.html">about</a>
-      <div class="header-image">
-        <img src="Images/maplibs.png" />
-      </div>
-    </div>
-
-    <div class="main-body">
-      <div class="button">
-        <a href="testfull.html">
-          <button id="random-button">
-            Open to a new community somewhere in Bronzeville
-          </button>
-        </a>
+    <div id="bronzeville">
+      <div class="nav" id="nav">
+        <a href="about.html">about</a>
+        <!-- <div class="header-image">
+          <img src="Images/maplibs.png" />
+        </div> -->
       </div>
 
-      <div class="footer">
-        <!-- <input
-			type="email"
-			placeholder="Enter your email here"
-			class="color-inputs"
-			id="email-input"
-		  /> -->
-        <a target="_blank" href="maplibs.html">
-          <input
-            type="submit"
-            value="Play MapLibs"
-            class="color-inputs"
-            id="email-submit"
-          />
-        </a>
+      <div class="main-body" id="mainbody">
+        <div class="header-image">
+          <img src="Images/maplibs.png" />
+        </div>
+        <div class="button">
+          <a href="testfull.html">
+            <button id="random-button">
+              Open to a new community somewhere in Bronzeville
+            </button>
+          </a>
+        </div>
+
+        <div class="footer">
+          <a target="_blank" href="maplibs.html">
+            <input
+              type="submit"
+              value="Play MapLibs"
+              class="color-inputs"
+              id="email-submit"
+            />
+          </a>
+        </div>
       </div>
     </div>
 
@@ -206,14 +205,14 @@
         // Bg gradient
 
         var canvas = document.createElement("canvas");
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        canvas.width = window.clientWidth;
+        canvas.height = window.clientHeight;
 
         var context = canvas.getContext("2d");
 
         var gradient = context.createLinearGradient(0, 0, 0, canvas.height);
         gradient.addColorStop(0, "#1750AC");
-        gradient.addColorStop(0.8, "#5494DA");
+        gradient.addColorStop(0.5, "#5494DA");
 
         context.fillStyle = gradient;
         context.fillRect(0, 0, canvas.width, canvas.height);
