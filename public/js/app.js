@@ -7,6 +7,8 @@ let object = document.getElementById("object");
 let name = document.getElementById("name");
 let email = document.getElementById("email");
 
+let reload = document.getElementById("reload");
+
 let nvalues = ["Bushwick", "Bronzeville", "Aurora"];
 let pvalues = ["Maria Hernandez", "Sip & Savor", "Mandrake Park"];
 let svalues = ["pigeons", "Kids playing", "conversations over coffee"];
@@ -62,11 +64,14 @@ window.addEventListener("load", () => {
   });
 });
 
+let instructions = document.getElementById("instructions");
 let maplibsdoc = document.getElementById("maplibspdf");
 let bronzeville = document.getElementById("bronzeville");
 let navbar = document.getElementById("nav");
+let about = document.getElementById("about");
 let mainbody = document.getElementById("mainbody");
 
+let currentH, fullH;
 //change transparency based on scroll value
 //mapLib pdf goes to 0
 //home page of bronzeville goes to 100
@@ -75,12 +80,12 @@ window.addEventListener("scroll", function () {
   var lastScrollTop = 0;
 
   let currentY2 = window.scrollY;
-  let scrollFromTop = window.pageYOffset;
+  // let scrollFromTop = window.pageYOffset;
 
-  let totalHeight = window.innerHeight;
+  let totalHeight = 1000;
 
-  let currentH = Math.round(100 - (currentY2 / totalHeight) * 100) + "%";
-  let fullH = Math.round((currentY2 / totalHeight) * 100) + "%";
+  currentH = Math.round(100 - (currentY2 / totalHeight) * 100) + "%";
+  fullH = Math.round((currentY2 / totalHeight) * 100) + "%";
 
   if (currentY2 > 0 && lastScrollTop <= currentY2) {
     lastScrollTop = currentY2;
@@ -94,15 +99,13 @@ window.addEventListener("scroll", function () {
   maplibsdoc.style.opacity = currentH;
 
   if (currentY2 > 900) {
-    // bronzeville.style.opacity = fullH;
-    navbar.style.opacity = fullH;
+    // navbar.style.opacity = fullH;
     mainbody.style.opacity = fullH;
-    navbar.style.zIndex = 1;
     mainbody.style.zIndex = 1;
   } else {
-    navbar.style.opacity = 0;
+    // navbar.style.opacity = 0;
     mainbody.style.opacity = 0;
-    navbar.style.zIndex = 0;
+
     mainbody.style.zIndex = 0;
   }
 
@@ -120,6 +123,7 @@ window.addEventListener("scroll", function () {
   // }
 
   if (currentY2 > 200 && currentY2 < 300) {
+    instructions.innerHTML = "Here's What Your Neighbor Said";
     neighborhood.value = nvalues[0];
     place.value = pvalues[0];
     sound.value = svalues[0];
@@ -127,13 +131,15 @@ window.addEventListener("scroll", function () {
     event.value = evalues[0];
     object.value = ovalues[0];
   } else if (currentY2 > 300 && currentY2 < 400) {
+    instructions.innerHTML = "Here's What Your Neighbor Said";
     neighborhood.value = nvalues[1];
     place.value = pvalues[1];
     sound.value = svalues[1];
     smell.value = smvalues[1];
     event.value = evalues[1];
     object.value = ovalues[1];
-  } else if (currentY2 > 400 && currentY2 < 600) {
+  } else if (currentY2 > 400) {
+    instructions.innerHTML = "Here's What Your Neighbor Said";
     neighborhood.value = nvalues[2];
     place.value = pvalues[2];
     sound.value = svalues[2];
@@ -141,6 +147,7 @@ window.addEventListener("scroll", function () {
     event.value = evalues[2];
     object.value = ovalues[2];
   } else {
+    instructions.innerHTML = "FILL IN THE BLANKS";
     neighborhood.value = "A NEIGHBORHOOD";
     place.value = "A PLACE";
     sound.value = "A SOUND";
@@ -148,4 +155,14 @@ window.addEventListener("scroll", function () {
     event.value = "AN EVENT";
     object.value = "AN OBJECT";
   }
+});
+
+document.getElementById("reload").addEventListener("click", () => {
+  console.log("hi");
+  maplibsdoc.style.opacity = fullH;
+  mainbody.style.opacity = 0;
+
+  mainbody.style.zIndex = 0;
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 });

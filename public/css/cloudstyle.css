@@ -8,7 +8,7 @@ canvas {
 }
 
 html {
-  height: 1000px;
+  height: 2000px;
 }
 
 body {
@@ -39,7 +39,7 @@ body {
   z-index: 1;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .header {
@@ -106,9 +106,9 @@ a {
 }
 
 /* now is where thee rest of the page's css comes in */
-.nav {
+/* .nav {
   z-index: 0;
-  margin-top: 3em;
+  margin-top: 20em;
   opacity: 0;
 }
 
@@ -116,7 +116,7 @@ a {
   margin-left: 3em;
   font-size: 18px;
   color: white;
-}
+} */
 
 .header-image {
   position: fixed;
@@ -131,7 +131,7 @@ a {
   z-index: 0;
   position: fixed;
   bottom: 25%;
-  margin-left: 31%;
+  margin-left: 32%;
   opacity: 0;
 }
 
@@ -170,18 +170,39 @@ a {
   margin-top: 30%;
 }
 
+.bottom_nav {
+  background-color: rgba(255, 252, 255, 0.5);
+  border-top: 4px double rgb(23, 80, 172);
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 5%;
+  padding-top: 8px;
+}
+
+.bottom_nav a {
+  text-decoration: none;
+  font-size: 24px;
+  color: rgb(23, 80, 172, 0.7);
+  z-index: 2;
+  margin-left: 47%;
+  /* left: 50%; */
+  /* transform: translate(50%, 0); */
+}
+
 ::placeholder {
   color: white;
 }
 
-#email-submit {
+#reload {
   border-radius: 15px;
   font-family: "Cormorant", serif;
   font-size: 20px;
   padding: 15px 20px;
 }
 
-#email-submit:hover {
+#reload:hover {
   background-color: rgba(255, 255, 255, 0.5);
   color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
@@ -194,7 +215,7 @@ a {
 
   .nav a {
     top: 10em;
-    margin-left: 45%;
+    margin-left: 40%;
     font-size: 40px;
     color: white;
   }
@@ -205,11 +226,11 @@ a {
   }
 
   .button {
-    margin-top: 6em;
+    margin-top: 10%;
   }
 
   #random-button {
-    margin-left: -7%;
+    margin-left: -8%;
     font-size: 30px;
     padding: 20px;
     width: 80%;
@@ -221,9 +242,9 @@ a {
     row-gap: 40px;
   }
 
-  #email-submit {
-    margin-top: 1em;
-    margin-left: 10%;
+  #reload {
+    margin-top: 5%;
+    margin-left: 8%;
     font-size: 30px;
   }
 }

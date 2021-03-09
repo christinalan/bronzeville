@@ -142,6 +142,18 @@ body {
   padding: 0px;
 }
 
+#full_des {
+  position: absolute;
+  z-index: 1;
+  background-color: rgb(255, 255, 255, 0.3);
+  border: 1px solid #ffffff;
+  left: 10px;
+  top: 15%;
+  width: 20%;
+  height: 30%;
+  opacity: 0;
+}
+
 @media all and (max-width: 700px) {
   .header-image img {
     width: 40%;

@@ -27,10 +27,12 @@
   <body>
     <div class="maplibspdf" id="maplibspdf">
       <div class="header">
-        <img class="top-image" src="Images/flyer_headerT.png" />
+        <a id="top">
+          <img class="top-image" src="Images/flyer_headerT3.png"
+        /></a>
       </div>
       <div>
-        <p class="fill-in">FILL IN THE BLANKS!</p>
+        <p id="instructions" class="fill-in">FILL IN THE BLANKS!</p>
       </div>
       <div class="text">
         <p class="description" id="description">
@@ -111,13 +113,13 @@
 
     <div id="bronzeville">
       <div class="nav" id="nav">
-        <a href="about.html">about</a>
         <!-- <div class="header-image">
           <img src="Images/maplibs.png" />
         </div> -->
       </div>
 
       <div class="main-body" id="mainbody">
+        <!-- <a id="about" href="about.html">about</a> -->
         <div class="header-image">
           <img src="Images/maplibs.png" />
         </div>
@@ -130,15 +132,18 @@
         </div>
 
         <div class="footer">
-          <a target="_blank" href="maplibs.html">
+          <a id="reload_button">
             <input
               type="submit"
               value="Play MapLibs"
               class="color-inputs"
-              id="email-submit"
+              id="reload"
             />
           </a>
         </div>
+      </div>
+      <div class="bottom_nav">
+        <a id="about" href="about.html">about</a>
       </div>
     </div>
 
