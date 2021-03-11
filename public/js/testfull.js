@@ -13,19 +13,34 @@ let description = document.getElementById("sentence");
 let adddes = document.createElement("p");
 let isMuted;
 
-// let sources = [
-//   "Assets/Black Excellence Elder_History.mp4",
-//   "Assets/Bud Bilken Parade_History.mp4",
-//   "Assets/Mandrake Park2_Place.mp4",
-//   "Assets/Sip Savor2_Place.mp4",
-//   "Assets/Uncle Js_Smells.mp4",
-// ];
+let neighborhood = document.getElementById("neighborhood");
+let place = document.getElementById("place");
+let sound = document.getElementById("sound");
+let smell = document.getElementById("smell");
+let event = document.getElementById("event");
+let object = document.getElementById("object");
+let addMLN = document.createElement("p");
+let addMLP = document.createElement("p");
+let addMLS = document.createElement("p");
+let addMLSM = document.createElement("p");
+let addMLE = document.createElement("p");
+let addMLO = document.createElement("p");
 
 let glenance = {
   text: "glenance's place",
   src: "Assets/Sip Savor2_Place.mp4",
   des: "Sip & Savor",
   credit: "Credit: Toya Miller",
+};
+
+//text example for glenance full maplib, might try to import from csv?
+let glenanceML = {
+  neighborhood: "Bronzeville",
+  place: "Sip & Savor",
+  sound: "the hum of conversation",
+  smell: "coffee",
+  history: "The Forum",
+  object: "Attractive, community-inspired light post",
 };
 
 let azurii = {
@@ -100,6 +115,24 @@ window.addEventListener("load", () => {
     console.log("hello");
     fullML.style.zIndex = 9;
     fullML.style.opacity = 1;
+    addMLN.innerHTML = glenanceML.neighborhood;
+    neighborhood.appendChild(addMLN);
+    neighborhood.style.color = "gold";
+    addMLP.innerHTML = glenanceML.place;
+    place.appendChild(addMLP);
+    place.style.color = "gold";
+    addMLS.innerHTML = glenanceML.sound;
+    sound.appendChild(addMLS);
+    sound.style.color = "gold";
+    addMLSM.innerHTML = glenanceML.smell;
+    smell.appendChild(addMLSM);
+    smell.style.color = "gold";
+    addMLE.innerHTML = glenanceML.event;
+    event.appendChild(addMLE);
+    event.style.color = "gold";
+    addMLO.innerHTML = glenanceML.object;
+    object.appendChild(addMLO);
+    object.style.color = "gold";
   });
 
   let stringSource = JSON.stringify(source.src);
