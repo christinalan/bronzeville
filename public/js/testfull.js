@@ -117,22 +117,22 @@ window.addEventListener("load", () => {
     fullML.style.opacity = 1;
     addMLN.innerHTML = glenanceML.neighborhood;
     neighborhood.appendChild(addMLN);
-    neighborhood.style.color = "gold";
+    neighborhood.style.color = "lightblue";
     addMLP.innerHTML = glenanceML.place;
     place.appendChild(addMLP);
-    place.style.color = "gold";
+    place.style.color = "lightblue";
     addMLS.innerHTML = glenanceML.sound;
     sound.appendChild(addMLS);
-    sound.style.color = "gold";
+    sound.style.color = "lightblue";
     addMLSM.innerHTML = glenanceML.smell;
     smell.appendChild(addMLSM);
-    smell.style.color = "gold";
+    smell.style.color = "lightblue";
     addMLE.innerHTML = glenanceML.event;
     event.appendChild(addMLE);
-    event.style.color = "gold";
+    event.style.color = "lightblue";
     addMLO.innerHTML = glenanceML.object;
     object.appendChild(addMLO);
-    object.style.color = "gold";
+    object.style.color = "lightblue";
   });
 
   let stringSource = JSON.stringify(source.src);
@@ -144,6 +144,13 @@ window.addEventListener("load", () => {
   } else if (stringSource.includes("wav")) {
     // renderer.setSize(window.innerWidth, window.innerHeight);
   }
+
+  let infoSpan = document.getElementById("info-span");
+  let hoverBox = document.getElementById("full_des");
+
+  infoSpan.onclick = function () {
+    hoverBox.style.display = "none";
+  };
 
   dragElement(document.getElementById("full_des"));
 
