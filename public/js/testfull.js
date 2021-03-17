@@ -31,6 +31,12 @@ let glenance = {
   src: "Assets/Sip Savor2_Place.mp4",
   des: "Sip & Savor",
   credit: "Credit: Toya Miller",
+  neighborhood: "Bronzeville",
+  place: "Sip & Savor",
+  sound: "the hum of conversation",
+  smell: "coffee",
+  history: "The Forum",
+  object: "Attractive, community-inspired light post",
 };
 
 //text example for glenance full maplib, might try to import from csv?
@@ -48,6 +54,12 @@ let azurii = {
   des: "Mandrake Park",
   src: "Assets/Mandrake Park2_Place.mp4",
   credit: "Credit: Pastor Michael Neal",
+  neighborhood: "Oakland",
+  place: "Mandrake Park",
+  sound: "Kids' Laughing",
+  smell: "Grass",
+  history: "The man Mandrake Park was named after",
+  object: "Nice house",
 };
 
 let susan = {
@@ -55,6 +67,12 @@ let susan = {
   des: "Black Excellence",
   src: "Assets/Black Excellence Elder_History.mp4",
   credit: "Credit: Kathy Chaney",
+  neighborhood: "Bronzeville",
+  place: "Neighborhood gatherings and support local businesses",
+  sound: "Black joy and laughter",
+  smell: "Good Food",
+  history: "BLACK EXCELLENCE",
+  object: "Community map",
 };
 
 let jarred = {
@@ -62,6 +80,13 @@ let jarred = {
   des: "Uncle J's Bar B Que",
   src: "Assets/Uncle Js_Smells.mp4",
   credit: "Credit: Uncle J's Bar B Que",
+  neightborhood: "Bronzeville",
+  place: "Peach's",
+  sound:
+    "the whistle of the man from the apartment complex across the street looking for his cats",
+  smell: "UNCLE J'S BAR B QUE",
+  history: "B QUE",
+  object: "community-run business",
 };
 
 let ezinwa = {
@@ -69,6 +94,13 @@ let ezinwa = {
   des: "Bud Billiken Parade",
   src: "Assets/Bud Bilken Parade_History.mp4",
   credit: "Credit: James Harris",
+  neightborhood: "Oakwood Shores",
+  place: "Ellis Park",
+  sound: "People laughing and playing (not too loud) music",
+  smell: "nothing",
+  history:
+    "the real familial bonds that existed in the former Ida B Wells housing development; grassroots organizing; structural displacement through housing policies;",
+  object: "green space and bench",
 };
 
 let franklin = {
@@ -76,6 +108,12 @@ let franklin = {
   des: "Kids playing",
   src: "Assets/Sounds/franklin.wav",
   credit: "",
+  neightborhood: "Bronzeville/ Grand Blvd",
+  place: "Sip and Savor",
+  sound: "KIDS PLAYING",
+  smell: "water from the lakefront",
+  history: "the Wabash YMCA and Carter G.Woodson",
+  object: "Historical marker",
 };
 
 let marcellus = {
@@ -83,6 +121,12 @@ let marcellus = {
   des: "People conversing over coffee and tea",
   src: "Assets/Sounds/marshall.wav",
   credit: "",
+  neightborhood: "Bronzeville",
+  place: "Sip and Savor",
+  sound: "PEOPLE CONVERSING OVER COFFEE AND TEA",
+  smell: "coffee",
+  history: "black achievement and pride",
+  object: "garbage cans, no loitering, a comfortable presence",
 };
 
 let newsources = [glenance, azurii, susan, jarred, ezinwa, franklin, marcellus];
@@ -115,22 +159,22 @@ window.addEventListener("load", () => {
     console.log("hello");
     fullML.style.zIndex = 9;
     fullML.style.opacity = 1;
-    addMLN.innerHTML = glenanceML.neighborhood;
+    addMLN.innerHTML = newsources[randomNumber].neighborhood;
     neighborhood.appendChild(addMLN);
     neighborhood.style.color = "lightblue";
-    addMLP.innerHTML = glenanceML.place;
+    addMLP.innerHTML = newsources[randomNumber].place;
     place.appendChild(addMLP);
     place.style.color = "lightblue";
-    addMLS.innerHTML = glenanceML.sound;
+    addMLS.innerHTML = newsources[randomNumber].sound;
     sound.appendChild(addMLS);
     sound.style.color = "lightblue";
-    addMLSM.innerHTML = glenanceML.smell;
+    addMLSM.innerHTML = newsources[randomNumber].smell;
     smell.appendChild(addMLSM);
     smell.style.color = "lightblue";
-    addMLE.innerHTML = glenanceML.event;
+    addMLE.innerHTML = newsources[randomNumber].history;
     event.appendChild(addMLE);
     event.style.color = "lightblue";
-    addMLO.innerHTML = glenanceML.object;
+    addMLO.innerHTML = newsources[randomNumber].object;
     object.appendChild(addMLO);
     object.style.color = "lightblue";
   });
@@ -201,15 +245,7 @@ window.addEventListener("load", () => {
 
 let reloadButton = document.getElementById("random-button");
 let lastPick = 0;
-// let getRandom = function () {
-//   let newRandom = Math.floor(Math.random() * newsources.length);
 
-//   if (newRandom != lastPick) {
-//     lastPick = newRandom;
-//   } else {
-//     getRandom();
-//   }
-// };
 reloadButton.addEventListener("click", () => {
   let newRandom = Math.floor(Math.random() * newsources.length);
 
@@ -232,6 +268,32 @@ reloadButton.addEventListener("click", () => {
 
   addcredit.innerHTML = newsources[newRandom].credit;
   credit.appendChild(addcredit);
+
+  fullML.style.opacity = 0;
+
+  text.addEventListener("mouseover", () => {
+    console.log("hello");
+    fullML.style.zIndex = 9;
+    fullML.style.opacity = 1;
+    addMLN.innerHTML = newsources[newRandom].neighborhood;
+    neighborhood.appendChild(addMLN);
+    neighborhood.style.color = "lightblue";
+    addMLP.innerHTML = newsources[newRandom].place;
+    place.appendChild(addMLP);
+    place.style.color = "lightblue";
+    addMLS.innerHTML = newsources[newRandom].sound;
+    sound.appendChild(addMLS);
+    sound.style.color = "lightblue";
+    addMLSM.innerHTML = newsources[newRandom].smell;
+    smell.appendChild(addMLSM);
+    smell.style.color = "lightblue";
+    addMLE.innerHTML = newsources[newRandom].history;
+    event.appendChild(addMLE);
+    event.style.color = "lightblue";
+    addMLO.innerHTML = newsources[newRandom].object;
+    object.appendChild(addMLO);
+    object.style.color = "lightblue";
+  });
 
   let stringSource = JSON.stringify(source.src);
   // console.log(stringSource.includes("mp4"));
