@@ -9,12 +9,28 @@ let email = document.getElementById("email");
 
 let reload = document.getElementById("reload");
 
-let nvalues = ["Bushwick", "Bronzeville", "Aurora"];
-let pvalues = ["Maria Hernandez", "Sip & Savor", "Mandrake Park"];
-let svalues = ["pigeons", "Kids playing", "conversations over coffee"];
-let smvalues = ["popeyes", "bbq", "Uncle J's Smells"];
-let evalues = ["Bud Bilken Parade", "Black Excellence", "BK mutual aid"];
-let ovalues = ["community fridge", "mental health check-ins", "fresh flowers"];
+let nvalues = ["Bronzeville", "Oakland", "Oakwood Shores"];
+let pvalues = [
+  "Sip & Savor",
+  "Mandrake Park and the Oakwood Beach",
+  "Ellis Park",
+];
+let svalues = [
+  "The hum of conversation",
+  "Kids playing",
+  "People laughing and playing (not too loud) music",
+];
+let smvalues = ["Coffee", "children playing and neighbors chatting", "nothing"];
+let evalues = [
+  "The Forum",
+  "Music Events at The Arts and Rec Center Ellis Park Rooftop Terrace",
+  "the real familial bonds that existed in the former Ida B Wells housing development",
+];
+let ovalues = [
+  "Attractive, community-inspired light post",
+  "Park",
+  "green space and bench",
+];
 
 window.addEventListener("load", () => {
   //posts answers from submit button
